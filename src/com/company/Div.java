@@ -1,8 +1,17 @@
 package com.company;
 
-public class Div implements Operation {
+public class Div extends Sub {
+    public Div(double num1, double num2) {
+        super(num1, num2);
+    }
+
+    public double qaz(){
+        return a / b ;
+    }
+
     @Override
-    public void Culc(double num1, double num2) {
-        System.out.println(num1 / num2);
+    public void culc() {
+       // double x = a/b;
+        super.culc();
     }
 }

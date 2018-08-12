@@ -1,10 +1,19 @@
 package com.company;
 
-public class Sum implements Operation {
+public class Sum{
+    double a, b;
 
-    @Override
-    public void Culc(double num1, double num2) {
-        System.out.println(num1 + num2);
+
+    public Sum(double num1, double num2) {
+        this.a = num1;
+        this.b = num2;
+    }
+    public double qaz(){
+        return a + b ;
+    }
+
+    public void culc() {
+        System.out.println(qaz());
     }
 }
 

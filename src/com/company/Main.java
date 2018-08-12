@@ -1,23 +1,34 @@
 package com.company;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.nio.Buffer;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        System.out.println("Введите первое число:");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String number1 = reader.readLine();
-        int num1 = Integer.parseInt(number1);
-        System.out.println("Выбрать действие (+ - * /)");
-        String znak = reader.readLine();
-        String number2 = reader.readLine();
-        int num2 = Integer.parseInt(number2);
-        System.out.println("Результат вычисления:");
-        Znak znak = new Znak(num1, znak, num2);
-        znak.methodZnak();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Я четенький калькулятор, умею считать!");
+        while(true) {
+            System.out.println("Выберите действие: \n\"*\" - умножить" +
+                    "\n\"/\"  - делить\n\"-\" - вычесть\n\"+\" - сложить\n\"666\" - чтобы я пошел отдыхать");
+            String znak = scanner.nextLine();
+            if (znak.equals("666")) break;
+            //String musor = scanner.nextLine();
+            if (!znak.equals("*") && !znak.equals("/") && !znak.equals("+") && !znak.equals("-")) {
+                System.out.println("Могу считывать только это(((((");
+                continue;
+            }
+            System.out.println("Введите первое число:");
+            double num1 = scanner.nextDouble();
+
+            System.out.println("Введите второе число:");
+            double num2 = scanner.nextDouble();
+
+            System.out.println("Результат вычисления:");
+            String musor = scanner.nextLine();
+
+            Znak znak1 = new Znak();
+            znak1.method(num1, num2, znak);
+        }
     }
 }
